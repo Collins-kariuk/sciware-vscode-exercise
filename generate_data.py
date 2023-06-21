@@ -16,6 +16,9 @@ def gen_data(N: int,
              intercept: float = 1.0,
              sigma: float = 0.1,
              ) -> npt.NDArray[np.float64]:
+    """
+    Generates N data points following a line
+    """
     print(f'Generating {N} data points...')
 
     ### YOUR CODE HERE ###
@@ -47,6 +50,10 @@ def save_data(data: npt.NDArray[np.float64],
 def main(N: int):
     ### YOUR CODE HERE ###
     ### Call the gen_data() and save_data() functions to generate and write the data
+    data = gen_data(10)
+    data.min()
+
+    save_data
     pass
 
 
