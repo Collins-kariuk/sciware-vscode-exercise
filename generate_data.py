@@ -23,7 +23,7 @@ def gen_data(N: int,
 
     ### YOUR CODE HERE ###
     ### Generate N linearly spaced data points between 0 and 1 using np.linspace()
-    # X = ???
+    X = np.linspace(0, 1, N)
 
     rng = np.random.default_rng()
     ### YOUR CODE HERE ###
@@ -31,6 +31,7 @@ def gen_data(N: int,
     ### Should have a mean of 0 and a standard deviation of `sigma`
     # noise = ???
 
+    noise = rng.normal(0, sigma, N)
     Y = slope*X + intercept + noise
 
     data = np.vstack((X,Y))
@@ -45,16 +46,14 @@ def save_data(data: npt.NDArray[np.float64],
     ### YOUR CODE HERE ###
     ### Save the `data` array as a text file using Numpy's `np.savetxt()`
     # np.savetxt(???)
+    np.savetxt(fn, data)
 
 
 def main(N: int):
     ### YOUR CODE HERE ###
     ### Call the gen_data() and save_data() functions to generate and write the data
-    data = gen_data(10)
-    data.min()
-
-    save_data
-    pass
+    data = gen_data(N)
+    save_data(data)
 
 
 if __name__ == '__main__':

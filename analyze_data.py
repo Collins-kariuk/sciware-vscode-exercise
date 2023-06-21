@@ -43,7 +43,9 @@ def plot(data: npt.NDArray[np.float64],
 def main(fn: str):
     ### YOUR CODE HERE ###
     ### Call load_data(), fit_line(), and plot()
-    pass
+    data = load_data(fn)
+    slope, intercept = fit_line(data)
+    plot(data, slope, intercept)
 
 
 if __name__ == '__main__':
